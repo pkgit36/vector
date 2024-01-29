@@ -1,0 +1,25 @@
+---
+# Source: vector/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-vector
+  labels:
+    helm.sh/chart: vector-0.30.0
+    app.kubernetes.io/name: vector
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/component: Agent
+    app.kubernetes.io/version: "0.35.0-distroless-libc"
+    app.kubernetes.io/managed-by: Helm
+    
+  annotations:
+spec:
+  ports:
+    - name: prom-exporter
+      port: 9090
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: vector
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/component: Agent
+  type: ClusterIP
