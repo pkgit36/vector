@@ -10,8 +10,7 @@ metadata:
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/component: Agent
     app.kubernetes.io/version: "0.35.0-distroless-libc"
-    app.kubernetes.io/managed-by: Helm
-    
+    app.kubernetes.io/managed-by: Helm   
   annotations:
 spec:
   ports:

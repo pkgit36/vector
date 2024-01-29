@@ -1,0 +1,13 @@
+---
+# Source: vector/templates/daemonset.yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: release-name-vector
+  labels:
+    helm.sh/chart: vector-0.30.0
+    app.kubernetes.io/name: vector
+    app.kubernetes.io/instance: vector
+    app.kubernetes.io/component: Agent
+    app.kubernetes.io/version: "0.35.0-distroless-libc"
+    app.kubernetes.io/managed-by: Helm
